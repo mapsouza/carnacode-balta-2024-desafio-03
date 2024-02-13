@@ -25,7 +25,7 @@ jobs:
     # - name: Change base-tag in index.html from / to BlazorAppSpendsRegister
     #   run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorAppSpendsRegister\/" \/>/g' build/wwwroot/index.html
     - name: Commit wwwroot to GitHub Pages
-      uses: github-pages-deploy-action@v4.5.0
+      uses: JamesIves/github-pages-deploy-action@v4.5.0
       with:
         # GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         BRANCH: gh-pages
