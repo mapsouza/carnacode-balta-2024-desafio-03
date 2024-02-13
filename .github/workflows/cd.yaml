@@ -1,9 +1,9 @@
-name: gh-pages
+name: publishGitPages
 
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions: 
   contents: write
