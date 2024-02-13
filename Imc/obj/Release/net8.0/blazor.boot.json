@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Imc",
   "resources": {
-    "hash": "sha256-9p59m8+Kp8r6zbgz1OcsnWdIA+6L7lmoE8857OjR4N0=",
+    "hash": "sha256-hH0h5x6XB8uoqrDT0+c3RRmLeVRLiZDOTn8s4TjpHUY=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.0lnbe73d1p.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
     },
@@ -209,10 +209,10 @@
       "mscorlib.wasm": "sha256-EpWTfh4m/hEcXRFYMCR9YeYHwdUJgcm1laBaxWfq2S4=",
       "netstandard.wasm": "sha256-2kH24/YfHmU3B4eYRyRmiwebYROM4+B9eDWKvMnUdP8=",
       "System.Private.CoreLib.wasm": "sha256-CsySKiP7HYY1pS8LTDE60EkqiX5oHb3WoEZHDNd1yK0=",
-      "Imc.wasm": "sha256-EYvUfYEaq0sImznNSTqmi+Pq8CBCx4wNOohNbEDJBaI="
+      "Imc.wasm": "sha256-Rp3h/xU2jruJjx/tTYWOwzIbrEtXOIlq5Oixb9EFbfs="
     },
     "pdb": {
-      "Imc.pdb": "sha256-PbIdJw6ne0oJct0r/CcrrKFG2gsysfnit/CApcnCxKg="
+      "Imc.pdb": "sha256-YpIm21TxctHbmR9zYarySYBSFyzWA7WYDGhOZO2jeZs="
     }
   },
   "cacheBootResources": true,

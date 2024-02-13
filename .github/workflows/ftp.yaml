@@ -1,0 +1,52 @@
+name: FTP
+
+on:
+  push:
+    branches: ReleaseBeta
+
+jobs:
+  build:
+    runs-on: ubuntu-latest #windows-latest  
+    
+    steps:
+      - name: Check out code ✅
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET 8 🛠️
+        uses: actions/setup-dotnet@v4
+        with: 
+          dotnet-version: '8.0.x'
+          
+      - name: Publish
+        run: dotnet publish Imc/Imc.csproj -c Release --output ./output
+        
+      - name: Deixa o site Offline 📂
+        run: curl -v -T app_offline.htm ftp://ftp.pdsinformatica.com.br/imc.pdsinformatica.com.br/wwwroot/ --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}
+#        uses: GenieTim/ftp-action@v4.0.1
+#        with:
+#          host: ${{ secrets.FTP_SERVER }}
+#          user: ${{ secrets.FTP_USERNAME }}
+#          password: ${{ secrets.FTP_PASSWORD }}
+#          localDir: "/app_offline.htm"
+#          remoteDir: "apibeta.pdsinformatica.com.br/wwwroot"
+            
+      - name: Publish ApiBETA FTP 📂
+        uses: maverage/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          local-dir: './output/'
+          server-dir: 'imc.pdsinformatica.com.br/wwwroot/'
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+
+      - name: Clean app_offline.htm ✏️
+        run: curl -v ftp://ftp.pdsinformatica.com.br:2121 --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} -Q "DELE /imc.pdsinformatica.com.br/wwwroot/app_offline.htm"
+#        uses: StephanThierry/ftp-delete-action@v2.1
+#        with:
+#          host: ${{ secrets.FTP_SERVER }}
+#          user: ${{ secrets.FTP_USERNAME }}
+#          password: ${{ secrets.FTP_PASSWORD }}
+#          remoteFiles: "app_offline.htm"
+#          remoteDirectories: "/wwwroot"
+#          workingDir: "/apibeta.pdsinformatica.com.br"
+#          ignoreSSL: "1"
