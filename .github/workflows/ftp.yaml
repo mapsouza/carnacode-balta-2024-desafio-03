@@ -28,9 +28,9 @@ jobs:
 #          user: ${{ secrets.FTP_USERNAME }}
 #          password: ${{ secrets.FTP_PASSWORD }}
 #          localDir: "/app_offline.htm"
-#          remoteDir: "apibeta.pdsinformatica.com.br/wwwroot"
+#          remoteDir: "imc.pdsinformatica.com.br/wwwroot"
             
-      - name: Publish ApiBETA FTP 📂
+      - name: Publish Imc FTP 📂
         uses: maverage/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -48,5 +48,5 @@ jobs:
 #          password: ${{ secrets.FTP_PASSWORD }}
 #          remoteFiles: "app_offline.htm"
 #          remoteDirectories: "/wwwroot"
-#          workingDir: "/apibeta.pdsinformatica.com.br"
+#          workingDir: "/imc.pdsinformatica.com.br"
 #          ignoreSSL: "1"
