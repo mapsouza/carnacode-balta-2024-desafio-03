@@ -2,7 +2,7 @@ name: FTP
 
 on:
   push:
-    branches: ReleaseBeta
+    branches: main
 
 jobs:
   build:
