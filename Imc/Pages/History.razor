@@ -4,6 +4,7 @@
 @using Blazored.LocalStorage
 @using Imc.Services
 @inject ISyncLocalStorageService _localStorage;
+@inject NavigationManager _navigationManager;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +33,7 @@
 
 
 <div >
-    <a href="/">
-        <button class="botao-history">Voltar</button>
-    </a>
+    <MyButton Texto="Voltar" TipoBotao="botao-history" OnClickCallback="@BackCalculo"></MyButton>
 </div>
 
 </body>
@@ -88,5 +87,9 @@
         }
     }
 
+    private void BackCalculo()
+    {
+        _navigationManager.NavigateTo("/");
+    }
 
 }
