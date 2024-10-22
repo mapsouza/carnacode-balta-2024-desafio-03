@@ -33,7 +33,7 @@ jobs:
       - name: Publish Imc FTP 📂
         uses: maverage/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: 'ftp.pdsinformatica.com.br:2121'
           local-dir: './output/'
           server-dir: 'imc.pdsinformatica.com.br/wwwroot/'
           username: ${{ secrets.FTP_USERNAME }}
