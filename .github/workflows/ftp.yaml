@@ -21,7 +21,7 @@ jobs:
         run: dotnet publish Imc/Imc.csproj -c Release --output ./output
         
       - name: Deixa o site Offline 📂
-        run: curl -v -T app_offline.htm ftp://ftp.pdsinformatica.com.br/imc.pdsinformatica.com.br/wwwroot/ --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}
+        run: curl -v -T app_offline.htm ftp://ftp.pdsinformatica.com.br:2121/imc.pdsinformatica.com.br/wwwroot/ --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}
 #        uses: GenieTim/ftp-action@v4.0.1
 #        with:
 #          host: ${{ secrets.FTP_SERVER }}
